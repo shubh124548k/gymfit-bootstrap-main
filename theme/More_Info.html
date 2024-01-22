@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn More Page</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+      color: #333;
+    }
+
+    header {
+      background-color: #2c3e50;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+
+    section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80vh;
+      margin: 20px;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      max-width: 400px;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    h2 {
+      color: #3498db;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #2980b9;
+      transform: scale(1.05);
+    }
+
+    /* Styles for More Info Page */
+    .more-info-page {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: 1000;
+    }
+
+    .more-info-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: #333;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .more-info-page.active {
+      display: block;
+    }
+
+    /* Animation for More Info Page */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .more-info-content {
+      animation: fadeIn 0.5s ease;
+    }
+
+    </style>
+</head>
+<body>
+  <header>
+    <h1>Learn More Page</h1>
+  </header>
+
+  <section>
+    <div class="col-lg-4 col-md-6">
+        <div class="card p-4 text-center border-0 rounded-0">
+            <i class="icofont-bill-alt text-lg text-color"></i>
+            <h3 class="mt-3">Sizes and Quality</h3>
+            <p class="mt-3 mb-4">Available in Medium Glossy, Medium Silky, Medium, Medium Sift Touch, Glass HD Glossy, Glass HD Silky, Metallic - Medium, Special Texture, Pearl Coated, Deep Leather.</p>
+            <a href="#" class="btn-more-info">More Info</a>
+        </div>
+    </div>
+  </section>
+
+  <!-- More Info Page -->
+  <div class="more-info-page" style="background-image: url('your-background-image.jpg');">
+    <div class="more-info-content">
+      <a href="#" class="close-btn" onclick="closeMoreInfo()">X</a>
+      <h2>Size & Best Quality</h2>
+      <p><li>1) Medium Silky gives a feeling of silk touch and is a high class choice. Soft touch feels like feather and velvet.</li></p>
+      <p><li>2) Glass HD just look real glass and silky are non tear able type.</li></p>
+      <p><li>3) Special Texture is made of a doted feeling paper.</li></p>
+      <p><li>4) The paper used in coated pearl is self matt shining type as just original photo paper quality printing.</li></p>
+      <p><li>5) Deep Leather is also matt look but has got a leather type touch.</li></p>
+      <p><li>6) Metallic - M has a silver ground, japanese paper special metallic mix matt and shine rich on print.</li></p>
+    </div>
+  </div>
+
+
+
+
+  <script>
+    // JavaScript to toggle the More Info Page
+    document.querySelector('.btn-more-info').addEventListener('click', function() {
+      document.querySelector('.more-info-page').classList.add('active');
+    });
+
+    function closeMoreInfo() {
+      document.querySelector('.more-info-page').classList.remove('active');
+    }
+  </script>
+</body>
+</html>
